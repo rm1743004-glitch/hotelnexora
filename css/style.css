@@ -11,16 +11,18 @@ body{
 
 nav{
     position: fixed;
-    background:rgb(19, 3, 93);
-    color:white;
+    background: rgb(19, 3, 93);
+    color: white;
     width: 90%;
     height: 60px;
     padding: 15px;
-    margin-left: 75px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-radius: 20px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px
 }
 
 nav ul{
@@ -36,7 +38,28 @@ nav a{
     text-decoration:none;
 }
 
+@media (max-width: 768px){
 
+nav{
+
+        width: 95%;
+
+        height: auto;
+
+        padding: 10px;
+
+    }
+
+    nav ul{
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+ }
 .hero{
     text-align:center;
     padding:80px 20px;
