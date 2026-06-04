@@ -19,5 +19,325 @@
          <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
+      <section class="ubicacion">
+        <h2>📊 Sistema de Base de Datos</h2>
+        <div class="mapa">
+            <h3>🗄️ Gestión Centralizada</h3>
+            <p>Hotel Nexora utiliza un sistema de base de datos relacional (MySQL) para almacenar y administrar toda la información operativa del hotel de forma segura y eficiente.</p>
+            <p>Este sistema permite mantener un control integral de reservas, huéspedes, habitaciones y transacciones financieras.</p>
+        </div>
+    </section>
+    <div class="diagrama">
+    <img src="img/diagrama e-r.png" alt="Diagrama E-R">
+
+    <div class="titulo">
+        Diagrama E-R
+    </div>
+</div>
+   <h2>1. Habitaciones disponibles</h2>
+
+   <div class="sql-box">
+   <pre><code>
+    SELECT numero, tipo FROM habitacion
+    WHERE estado = 'Disponible';
+   </code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+    <tr>
+        <th>numero</th>
+        <th>tipo</th>
+    </tr>
+    <tr>
+        <td>H01</td>
+        <td>Habitacion Estandar</td>
+    </tr>
+     <tr>
+        <td>H02</td>
+        <td>Habitacion Superior</td>
+    </tr>
+     <tr>
+        <td>H03</td>
+        <td>Habitacion Ejectiva</td>
+    </tr>
+     <tr>
+        <td>H04</td>
+        <td>Junior Suite</td>
+    </tr>
+     <tr>
+        <td>H05</td>
+        <td>Suite Familiar</td>
+    </tr>
+     <tr>
+        <td>H06</td>
+        <td>Suite de lujo</td>
+    </tr>
+     <tr>
+        <td>H07</td>
+        <td>Suite Presidencial</td>
+    </tr>
+     <tr>
+        <td>H08</td>
+        <td>Villa Privada</td>
+    </tr>
+    
+<h2>2. Habitaciones tipo Suite</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT tipo, precio_noche
+FROM habitacion
+WHERE tipo LIKE '%Suite%';
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>tipo</th>
+<th>precio_noche</th>
+</tr>
+<tr>
+<td>Junior Suite</td>
+<td>950.00</td>
+</tr>
+<tr>
+<td>Suite Familiar</td>
+<td>1450.00</td>
+</tr>
+<tr>
+<td>Suite de Lujo</td>
+<td>1750.00</td>
+</tr>
+<tr>
+<td>Suite Presidencial</td>
+<td>2800.00</td>
+</tr>
+</table>
+
+
+<h2>3. Habitaciones con precio mayor a Q1000</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT tipo, precio_noche
+FROM habitacion
+WHERE precio_noche > 1000;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>tipo</th>
+<th>precio_noche</th>
+</tr>
+<tr>
+<td>Suite Familiar</td>
+<td>1450.00</td>
+</tr>
+<tr>
+<td>Villa Privada</td>
+<td>5000.00</td>
+</tr>
+</table>
+
+
+<h2>4. Habitaciones ordenadas por precio</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT tipo, precio_noche
+FROM habitacion
+ORDER BY precio_noche ASC;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>tipo</th>
+<th>precio_noche</th>
+</tr>
+<tr>
+<td>Habitación Estándar</td>
+<td>300.00</td>
+</tr>
+<tr>
+<td>Habitación Superior</td>
+<td>550.00</td>
+</tr>
+</table>
+
+
+<h2>5. Clientes registrados</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT nombres, apellidos
+FROM cliente;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>nombres</th>
+<th>apellidos</th>
+</tr>
+<tr>
+<td>Denis</td>
+<td>Martínez</td>
+</tr>
+<tr>
+<td>José</td>
+<td>López</td>
+</tr>
+</table>
+
+
+<h2>6. Empleados y cargo</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT nombres, cargo
+FROM empleado;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>nombres</th>
+<th>cargo</th>
+</tr>
+<tr>
+<td>Carlos</td>
+<td>Recepcionista</td>
+</tr>
+<tr>
+<td>Ana</td>
+<td>Administradora</td>
+</tr>
+</table>
+
+
+<h2>7. Servicios disponibles</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT nombre, precio
+FROM servicio;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>nombre</th>
+<th>precio</th>
+</tr>
+<tr>
+<td>Wifi Premium</td>
+<td>50.00</td>
+</tr>
+<tr>
+<td>Spa</td>
+<td>150.00</td>
+</tr>
+</table>
+
+
+<h2>8. Reservaciones realizadas</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT id_reservacion, fecha_entrada
+FROM reservacion;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>id_reservacion</th>
+<th>fecha_entrada</th>
+</tr>
+<tr>
+<td>1</td>
+<td>2026-06-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2026-06-05</td>
+</tr>
+</table>
+
+
+<h2>9. Cantidad de habitaciones registradas</h2>
+
+<div class="sql-box">
+<pre><code>
+SELECT COUNT(*) AS total_habitaciones
+FROM habitacion;
+</code></pre>
+</div>
+
+<h3>Resultados de la consulta:</h3>
+
+<table>
+<tr>
+<th>total_habitaciones</th>
+</tr>
+<tr>
+<td>8</td>
+</tr>
+</table>
+<div class="diagrama">
+    <img src="img/digramaflujo.jpeg" alt="Diagrama E-R">
+
+    <div class="titulo">
+        Diagrama de flujo
+    </div>
+</div>
+<div class="diagrama">
+    <img src="img/1.jpeg" alt="">
+    <img src="img/2.jpeg" alt="">
+    <img src="img/3.jpeg" alt="">
+    <img src="img/4.jpeg" alt="">
+    <img src="img/5.jpeg" alt="">
+    <img src="img/6.jpeg" alt="">
+    <img src="img/7.jpeg" alt="">
+    <div class="titulo">
+        Pseudocódigo
+    </div>
+</div>
+  <footer class="footer">
+    <h2>Hotel Nexora</h2>
+
+    <p>Experiencias únicas en hospedaje de calidad</p>
+
+    <hr>
+
+    <div class="contacto">
+        <span>📧 nexho@gmail.com</span>
+        <span>📞 (+502) 1234-5678</span>
+        <span>Instagram</span>
+        <span>Facebook</span>
+    </div>
+
+    <p class="copyright">
+        © 2024 Hotel Nexora. Todos los derechos reservados.
+    </p>
+</footer>
 </body>
 </html>

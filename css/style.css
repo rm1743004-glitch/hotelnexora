@@ -13,12 +13,9 @@ nav{
     position: fixed;
     background: rgb(19, 3, 93);
     color: white;
-    width: 90%;
+    width: 100%;
     height: 60px;
     padding: 15px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,12 +155,12 @@ form button{
 
 .galeria img{
     width: 100%;
-    height: auto;
+    height: 350px;
     margin: 0;
     border-radius: 10px;
 }
 
-@media (max-width: 768px){
+@media (max-width: auto){
 
     .galeria{
         grid-template-columns: 1fr;
@@ -244,6 +241,27 @@ button{
     object-fit: cover;
 }
 
+.diagrama{
+    width: 500px;
+    margin: auto;
+}
+
+.diagrama img{
+    width: 100%;
+    display: block;
+}
+
+.titulo{
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
 .contenido{
     position: absolute;
     bottom: 20px;
@@ -284,4 +302,113 @@ button{
     width: 150px;
     height: 150px;
     object-fit: contain;
+}
+.sql-box{
+    background:#021526;
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    margin:20px 0;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.sql-box pre{
+    margin:0;
+    font-size:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#f0f0f0;
+}
+#reportes{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+#reportes table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+}
+#reportes h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#reportes h2{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#reportes img{
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+#reportes p{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+#reportes hr{
+    margin: 40px 0;
+}
+.footer{
+    background: #071d3d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer h2{
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.footer p{
+    margin: 10px 0;
+}
+
+.footer hr{
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    width: 80%;
+    margin: 25px auto;
+}
+
+.contacto{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.contacto span{
+    color: #d4af37;
+}
+
+.copyright{
+    font-size: 14px;
+    color: #ddd;
 }
